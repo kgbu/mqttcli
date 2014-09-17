@@ -112,5 +112,11 @@ func NewOption(c *cli.Context) *MQTT.ClientOptions {
 
 		opts.AddBroker(brokerUri)
 	}
+
+	keepalive := c.Int("keepalive")
+	log.Infof("KeepAlive is set other than default 30: %d", keepalive)
+
+	opts.SetKeepAlive(uint(keepalive))
+
 	return opts
 }

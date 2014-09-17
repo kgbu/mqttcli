@@ -121,6 +121,7 @@ func main() {
 		cli.StringFlag{"m", "test message", "Message body", ""},
 		cli.BoolFlag{"r", "message should be retained.", ""},
 		cli.BoolFlag{"d", "enable debug messages", ""},
+		cli.IntFlag{"keepalive", 30, "KeepAlive", ""},
 		cli.BoolFlag{"insecure", "do not check that the server certificate", ""},
 		cli.StringFlag{"conf", "~/.mqtt.cfg", "config file path", ""},
 		cli.StringFlag{
