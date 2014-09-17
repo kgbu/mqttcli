@@ -71,7 +71,7 @@ Sub
 
 ::
 
-  mqttcli sub -t "some/#"
+  mqttcli sub -t "some/#" -keepalive '30'
 
 
 PubSub
