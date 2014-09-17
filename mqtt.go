@@ -114,9 +114,12 @@ func NewOption(c *cli.Context) *MQTT.ClientOptions {
 	}
 
 	keepalive := c.Int("keepalive")
-	log.Infof("KeepAlive is set other than default 30: %d", keepalive)
-
-	opts.SetKeepAlive(uint(keepalive))
+        if keepalive == 30 {
+		log.Infof("KeepAlive is default 30")
+	} else {
+		log.Infof("KeepAlive is set other than default 30: %d", keepalive)
+		opts.SetKeepAlive(uint(keepalive))
+	}
 
 	return opts
 }
